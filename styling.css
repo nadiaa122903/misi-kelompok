@@ -1,0 +1,100 @@
+body{
+    background-color:#cbdbe8;
+}
+.title{
+  margin-top: 40px;
+}
+.judul-gambar {
+  max-width: 300px;     /* Atur ukuran maksimum */
+  width: 100%;          /* Biar responsif di layar kecil */
+  height: auto;         /* Biar proporsional */
+  display: block;
+  margin: 0 auto;       /* Biar di tengah */
+}
+.deskripsi-gambar {
+  max-width: 600px; 
+  width: 100%;
+  height: 50px;         /* atur tinggi crop */
+  object-fit: cover;    /* ini penting untuk crop */
+  object-position: center top; /* fokus ke bagian atas */
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center; /* tengah horizontal */
+  align-items: center;     /* tengah vertikal jika tinggi kontainer ditentukan */
+  gap: 5px;               /* jarak antara input dan tombol */
+  scale: 1.5;
+}
+.input-container input,
+.input-container button {
+  border-radius: 20px;   /* ubah angka sesuai keinginan lengkungannya */
+  padding: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.input-container button {
+  background-color: #4c7caf; /* warna latar tombol */
+  color: white;              /* warna teks tombol */
+  border: none;              /* hilangkan garis pinggir */
+  padding: 5px 10px;        /* ukuran dalam tombol */
+  border-radius: 20px;       /* sudut membulat */
+  cursor: pointer;           /* ubah kursor saat hover */
+  font-size: 20px;
+  scale: 0.7;
+}
+.input-container button:hover {
+  background-color: #32567c; /* warna latar saat hover */
+  transform: scale(1.15);    /* efek sedikit membesar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* bayangan */
+  transition: all 0.2s ease-in-out; /* animasi halus */
+}
+.input-container input {
+  border: 3px solid #4c7caf;        /* warna dan ketebalan border */
+  background-color: white;       /* supaya beda dari background luar */
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.input-container input:focus {
+  outline: 2px solid #ffffff;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* mulai agak turun */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card {
+    max-width: 60%; /* maksimal lebar 90% dari layar */
+    margin: 40px auto;
+    margin-top: 40px;
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 400px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(5,0,0,0.5);
+    text-align: left;
+    border: 3px solid #4c7caf;
+    font-family: 'Courier New', Courier, monospace;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  .card h1 {
+    text-align: center;
+    scale: 0.9;
+  }

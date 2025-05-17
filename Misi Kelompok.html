@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css"/>
+    <title>Misi Kelompok</title>
+</head>
+<body>
+    <div class="title">
+        <img src="gambar-misi.png" class="judul-gambar">
+        <img src="gambar-deskripsi.png" class="deskripsi-gambar">
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="kodeInput" placeholder="Masukkan kode">
+        <button onclick="bukaMisi()">✔</button>
+    </div>
+
+    <div id="hasilMisi" class="card hidden"></div>
+
+    <script>
+        const misiData = {
+          "MISI41": {
+            toko: "Toko A",
+            narasi: "Andi membeli 5 buku tulis dan 2 pulpen dengan total harga Rp.24.000,00"
+          },
+          "MISI42": {
+            toko: "Toko A",
+            narasi: "Beni membeli 4 buku tulis dan 3 pulpen dengan total harga Rp.22.000,00"
+          },
+          "MISI43": {
+            toko: "Toko B",
+            narasi: "Cia membeli 3 buah apel dan 2 buah mangga dengan total harga Rp23.000,00"
+          },
+          "MISI63": {
+            toko: "Toko B",
+            narasi: "Dinda membeli 1 buah apel dan 4 buah mangga dengan total harga Rp21.000,00"
+          },
+          "MISI32": {
+            toko: "Toko C",
+            narasi: "Ella membeli 3 roti coklat dan 2 roti keju dengan total harga Rp26.000,00"
+          },
+          "MISI35": {
+            toko: "Toko C",
+            narasi: "Fara membeli 2 roti coklat dan 3 roti keju dengan total harga Rp24.000,00"
+          }
+        }
+        function bukaMisi() {
+      const kode = document.getElementById("kodeInput").value.trim().toUpperCase();
+      const hasil = document.getElementById("hasilMisi");
+
+      if (misiData[kode]) {
+        const data = misiData[kode];
+        hasil.innerHTML = `
+        <div>
+          <h1>📄 Informasi </h1>
+          <h2><strong></strong> ${data.toko}</h2>
+          <p>18/05/2025</p>
+          <p><br>${data.narasi}</p>
+        </div>
+        `;
+        hasil.classList.remove("hidden");
+         } else {
+          hasil.innerHTML = `<p style='color: red'>❌ Kode tidak ditemukan. Coba lagi.</p>`;
+          hasil.classList.remove("hidden");
+         }
+    }
+  </script>
+</body>
+</html>
